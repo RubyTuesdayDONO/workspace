@@ -8,12 +8,14 @@ package 'ruby'
 package 'git'
 package 'rubygems'
 
-gem 'vagrant'
-gem 'packer'
-gem 'test-kitchen'
+# gem 'vagrant'
+# gem 'packer'
+# gem 'test-kitchen'
 
 user ='reuben'
 
 ['~/src/com'].each do |dir|
-  directory dir.gsub(/^~/, "/home/#{user}")
+  directory dir.gsub(/^~/, "/home/#{user}") do
+    recursive true
+  end
 end
