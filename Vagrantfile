@@ -23,6 +23,9 @@ when 'google'
         chef.cookbooks_path = 'chef/cookbooks'
         chef.add_recipe 'user'
       end
+      workspace.vm.provision :serverspec do |spec|
+        spec.pattern = 'chef/spec/*_spec.rb'
+      end
     end
   end
 end
