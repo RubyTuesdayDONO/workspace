@@ -19,6 +19,7 @@ when 'google'
 
         override.ssh.username = ENV['SSH_USERNAME']
         override.ssh.private_key_path = ENV['SSH_KEY_PATH']
+        override.ssh.pty = true
       end
 
       workspace.vm.provision :chef_solo do |chef|
