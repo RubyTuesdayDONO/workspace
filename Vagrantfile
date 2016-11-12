@@ -11,6 +11,7 @@ when 'google'
         google.google_client_email = gce_config['client_email']
         google.google_json_key_location = gce_config['json_path']
 
+        google.image = 'centos-7-v20161027'
         google.preemptible = true
         google.auto_restart = false
         google.on_host_maintenance = 'TERMINATE'
