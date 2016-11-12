@@ -13,6 +13,7 @@ when 'google'
 
         google.image = 'centos-7-v20161027'
         google.preemptible = true
+        google.machine_type = 'g1-small'
         google.auto_restart = false
         google.on_host_maintenance = 'TERMINATE'
 
