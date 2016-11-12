@@ -24,7 +24,8 @@ when 'google'
 
       workspace.vm.provision :chef_solo do |chef|
         chef.cookbooks_path = 'chef/cookbooks'
-        chef.add_recipe 'user'
+        chef.roles_path = 'chef/roles'
+        chef.add_role 'workspace'
       end
       workspace.vm.provision :serverspec do |spec|
         spec.pattern = 'chef/spec/*_spec.rb'
