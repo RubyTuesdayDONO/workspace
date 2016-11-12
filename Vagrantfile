@@ -31,5 +31,9 @@ when 'google'
         spec.pattern = 'chef/spec/*_spec.rb'
       end
     end
+    config.trigger.after :destroy do
+      # do something to remove the known_hosts key --
+      # need to figure out to read provider state
+    end
   end
 end
