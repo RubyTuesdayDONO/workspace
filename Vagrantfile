@@ -26,6 +26,13 @@ when 'google'
         chef.cookbooks_path = 'chef/cookbooks'
         chef.roles_path = 'chef/roles'
         chef.add_role 'workspace'
+        chef.json = {
+          'system' => {
+            'principals' => [
+              ENV['USER']
+            ]
+          }
+        }
       end
       workspace.vm.provision :serverspec do |spec|
         spec.pattern = 'chef/spec/*_spec.rb'
